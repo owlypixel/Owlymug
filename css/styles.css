@@ -7,6 +7,7 @@
  */
 /* Document
    ========================================================================== */
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -458,18 +459,29 @@ body {
 }
 
 .wrapper {
-  margin: 20px;
+  margin: 40px 20px;
+}
+
+.heading {
+  position: absolute;
+  top: -55px;
+  left: 40px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #f6ac78;
+  text-transform: uppercase;
 }
 
 .mug {
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  -ms-flex-align: center;
-      align-items: center;
   -webkit-align-items: center;
-  -ms-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: auto;
   width: 300px;
   height: 300px;
@@ -488,13 +500,13 @@ body {
   height: 300px;
 }
 
-.cup::before, .cup::after {
+.cup:before, .cup:after {
   border-radius: 50%;
   content: "";
   display: block;
 }
 
-.cup::before {
+.cup:before {
   background-image: radial-gradient(30px 30px at 20% -22%, white 80%, rgba(255, 255, 255, 0)), radial-gradient(30px 30px at 80% -22%, white 80%, rgba(255, 255, 255, 0)), radial-gradient(100% 100% at center bottom, #cccccc 30%, #ebebeb 75%, #f0f0f0);
   box-shadow: 0 0 0.84px 0.84px #f0f0f0 inset;
   margin: 6px auto;
@@ -502,7 +514,7 @@ body {
   height: 70.83px;
 }
 
-.cup::after {
+.cup:after {
   box-shadow: 0 0 9.99px 6.66px #d8d8d8;
   position: absolute;
   bottom: 0;
@@ -544,7 +556,7 @@ body {
   height: 183.33px;
 }
 
-.handle::before {
+.handle:before {
   background: white;
   border-radius: 30% 100% 100% 20% / 15% 50% 50% 20%;
   box-shadow: 0 0 8.34px 1.68px white, 0 0 7.5px 15px #e4e4e4;
@@ -561,6 +573,81 @@ body {
   -webkit-transform-origin: 50% 50%;
       -ms-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
+}
+
+.LeftWing {
+  -webkit-animation: shake-left-wing 2s infinite;
+          animation: shake-left-wing 2s infinite;
+  -webkit-transform-origin: 68% 22%;
+      -ms-transform-origin: 68% 22%;
+          transform-origin: 68% 22%;
+}
+
+.RightWing {
+  -webkit-animation: shake-right-wing 2s infinite;
+          animation: shake-right-wing 2s infinite;
+  -webkit-transform-origin: 34% 22%;
+      -ms-transform-origin: 34% 22%;
+          transform-origin: 34% 22%;
+}
+
+.st0 {
+  display: none;
+}
+
+.st1 {
+  fill: #825F49;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.st2 {
+  fill: #8C6239;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.st3 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.st4 {
+  fill: #8C6239;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.st5 {
+  fill: #DDB663;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.st6 {
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.st7 {
+  fill: #825F49;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.star {
+  fill: #FEFEFE;
 }
 
 @-webkit-keyframes blink {
@@ -590,5 +677,65 @@ body {
   100% {
     -webkit-transform: scale(100%);
             transform: scale(100%);
+  }
+}
+
+@-webkit-keyframes shake-left-wing {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes shake-left-wing {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes shake-right-wing {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-100deg);
+            transform: rotate(-100deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes shake-right-wing {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-100deg);
+            transform: rotate(-100deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }

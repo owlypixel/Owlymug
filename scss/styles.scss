@@ -1,5 +1,5 @@
 @import 'normalize';
-@import 'mixins';
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 * {
 	box-sizing: border-box;
@@ -7,6 +7,7 @@
 
 $color: rgb(240,240,240);
 $size: 300px;
+
 body {
 	background: #fff;
 	background-size: cover;
@@ -14,15 +15,22 @@ body {
 	font-family: 'Open Sans';
 }
 .wrapper{
-	margin: 20px;
+	margin: 40px 20px;
+}
+.heading{
+	position: absolute;
+	top: -55px;
+	left: 40px;
+}
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color: #f6ac78;
+	text-transform: uppercase;
 }
 .mug {
   display: flex;
-	display: -webkit-flex;
-	display: -ms-flex;
   align-items: center;
-	-webkit-align-items: center;
-	-ms-align-items: center;
   margin: auto;
   width: $size;
   height: $size;
@@ -52,12 +60,12 @@ body {
   text-align: center;
   width: $size * 0.7222;
   height: $size;
-  &::before, &::after {
+  &:before, &:after {
 		border-radius: 50%;
 		content: "";
 		display: block;
   }
-  &::before {
+  &:before {
 		background-image:
   		radial-gradient(
     		($size * 0.1) ($size * 0.1) at 20% -22%,
@@ -80,7 +88,7 @@ body {
 		width: $size * 0.667;
 		height: $size * 0.2361;
   }
-  &::after {
+  &:after {
 		box-shadow: 0 0 ($size * 0.0333) ($size * 0.0222) rgb(216, 216, 216);
 		position: absolute;
 		bottom: 0;
@@ -137,7 +145,7 @@ body {
   box-shadow: (-$size*0.0056) 0 ($size*0.0056) ($size*0.0056) rgb(255,255,255) inset;
   width: $size * 0.2778;
   height: $size * 0.6111;
-  &::before {
+  &:before {
   	background: rgb(255,255,255);
 		border-radius: 30% 100% 100% 20% / 15% 50% 50% 20%;
 		box-shadow: 0 0 ($size*0.0278) ($size*0.0056) rgb(255,255,255), 0 0 ($size*0.025) ($size*0.05) ($color*0.95);
@@ -148,13 +156,31 @@ body {
 		height: 70%;
   }
 }
-.star{
-
-}
 .blink{
 	animation: blink 2s linear;
 	transform-origin: 50% 50%;
 }
+.LeftWing {
+	animation: shake-left-wing 2s infinite;
+	transform-origin: 68% 22%;
+}
+.RightWing {
+	animation: shake-right-wing 2s infinite;
+	transform-origin: 34% 22%;
+}
+
+// -------SVG styles--------
+.st0{display:none;}
+.st1{fill:#825F49;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+.st2{fill:#8C6239;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+.st3{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+.st4{fill:#8C6239;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+.st5{fill:#DDB663;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+.st6{stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+.st7{fill:#825F49;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+.star{fill:#FEFEFE;}
+
+// --------ANIMATIONS--------
 
 @keyframes blink{
 	0% {
@@ -165,5 +191,28 @@ body {
 	}
 	100% {
 		transform: scale(100%);
+	}
+}
+
+@keyframes shake-left-wing {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(90deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+@keyframes shake-right-wing {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(-100deg);
+	}
+	100% {
+		transform: rotate(0deg);
 	}
 }
