@@ -169,6 +169,12 @@ h2 {
 	transform-origin: 34% 22%;
 }
 
+// =======fill-box-fix---
+
+.LeftWing, .RightWing, .blink {
+  transform-box: fill-box;
+}   
+
 // -------SVG styles--------
 .st0{display:none;}
 .st1{fill:#825F49;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
