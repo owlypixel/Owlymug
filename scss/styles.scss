@@ -9,6 +9,7 @@ $color: rgb(240,240,240);
 $size: 300px;
 
 body {
+  display: flex;
 	background: #fff;
 	background-size: cover;
 	height: 100vh;
@@ -42,20 +43,20 @@ h2 {
     image: linear-gradient(
     	90deg,
     	rgba(255,255,255,0),
-      	$color*1.067 15%,
-        $color*1.067 25%,
+      	lighten($color,1.067) 15%,
+        lighten($color,1.067) 25%,
         rgba(255,255,255,0),
-        $color*1.067 75%,
-        $color*1.067 85%,
+        lighten($color,1.067) 75%,
+        lighten($color,1.067) 85%,
         rgba(255,255,255,0)
       ),
       linear-gradient(
         rgba(255,255,255,0),
-        $color*0.98
+        darken($color,0.98)
       );
   }
   border-radius: #{$size / 2} / #{$size * 0.1667};
-  box-shadow: 0 0 ($size * 0.0139) ($size * 0.0028) $color*0.99 inset;
+  box-shadow: 0 0 ($size * 0.0139) ($size * 0.0028) darken($color,0.99) inset;
   position: relative;
   text-align: center;
   width: $size * 0.7222;
@@ -79,8 +80,8 @@ h2 {
     	),
   		radial-gradient(
     		100% 100% at center bottom,
-      		$color*0.85 30%,
-      		$color*0.98 75%,
+      		darken($color,0.85) 30%,
+      		darken($color,0.98) 75%,
       		$color
       	);
 		box-shadow: 0 0 ($size * 0.0028) ($size * 0.0028) $color inset;
@@ -121,16 +122,16 @@ h2 {
 		  image: linear-gradient(
 		  	90deg,
 		  	rgba(255,255,255,0),
-		    	$color*1.067 15%,
-		      $color*1.067 25%,
+		    	lighten($color,1.067) 15%,
+		      lighten($color,1.067) 25%,
 		      rgba(255,255,255,0),
-		      $color*1.067 75%,
-		      $color*1.067 85%,
+		      lighten($color,1.067) 75%,
+		      lighten($color,1.067) 85%,
 		      rgba(255,255,255,0)
 		    ),
 		    linear-gradient(
 		      rgba(255,255,255,0),
-		      $color*0.98
+		      darken($color,0.98)
 		    );
 		}
 
@@ -148,7 +149,7 @@ h2 {
   &:before {
   	background: rgb(255,255,255);
 		border-radius: 30% 100% 100% 20% / 15% 50% 50% 20%;
-		box-shadow: 0 0 ($size*0.0278) ($size*0.0056) rgb(255,255,255), 0 0 ($size*0.025) ($size*0.05) ($color*0.95);
+		box-shadow: 0 0 ($size*0.0278) ($size*0.0056) rgb(255,255,255), 0 0 ($size*0.025) ($size*0.05) (darken($color,0.95));
 		content: "";
 		display: block;
 		margin: 30% auto auto 0;
